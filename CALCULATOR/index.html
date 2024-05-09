@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CALCULATOR</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Menu Section-->
+        <div class="menu" onclick="menu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
+        <div id="up">
+                <div  class="container" id="container">
+                    <span style="position: absolute; top: 0; right: 0; "  onclick= "sx()">X</span>
+                    <a onclick="calcu()">Calculator</a>
+                    <a onclick="time()">Time</a>
+                    <a onclick="temp()">Temperature</a>
+                 <a href="https://www.instagram.com/itz_nidhi.iiii_1610?igsh=ZW55ZTFkdDZkbXBl" target="_blank">Instagram</a>
+                </div>
+           </div>
+
+<!-- The Calculator section-->
+
+    <article id="calculator">
+        <header>
+            <h1 class="title">Calculator</h1>
+        </header>
+            <div class="start">
+            <form name="calc">
+                <input class="display" name="display" placeholder="0" style="overflow: scroll;" disabled>
+            </form>
+            <table>
+        <tr>
+            <td>
+                <div class="btn"  id="clear" onclick="clr()">C</div>
+            </td>
+            <td>
+                <div class="btn" onclick="opr('/')">÷</div>
+            </td>
+            <td>
+                <div class="btn" onclick="opr('*')">x</div>
+            </td>
+            <td>
+                <div class="btn"  onclick="back()">
+                    <img id="img" alt="‹" src="https://www.dropbox.com/s/2jmv326a6rdvijq/Clear.png?raw=1">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn" onclick="ins('7')">7</div>
+            </td>
+            <td>
+                <div class="btn" onclick="ins('8')">8</div>
+            </td>
+            <td>
+                <div class="btn" onclick="ins('9')">9</div>
+            </td>
+            <td>
+                <div class="btn" onclick="ins('-')">-</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn"  onclick="ins('4')">4</div>
+            </td>
+            <td>
+                <div class="btn"  onclick="ins('5')">5</div>
+            </td>
+            <td>
+                <div class="btn" onclick="ins('6')">6</div>
+            </td>
+            <td>
+                <div class="btn" onclick="opr('+')">+</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn"  onclick="ins('1')">1</div>
+            </td>
+            <td>
+                <div class="btn"  onclick="ins('2')">2</div>
+            </td>
+            <td>
+                <div class="btn"  onclick="ins('3')">3</div>
+            </td>
+            <td rowspan="2" class="equal">
+                <div id="equal" class="btn"  onclick="equal()">=</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="btn"  onclick="percent()">%</div>
+            </td>
+            <td>
+                <div class="btn" onclick="zero('0')">0</div>
+            </td>
+            <td>
+                <div class="btn"  onclick="ins('.')">.</div>
+            </td>
+        </tr>
+        </table>
+        </div>
+    </article>
+
+<!-- Time Section -->
+
+    <article id="time" style="display: none;">
+            <div class="time">
+                <header>
+                    <h1 class="title">Time</h1>
+                </header>
+                <br>
+                <div>
+                    <input type="number" min="0" value="0" id="seconds"  onchange="second(this.value)" oninput="second(this.value)">
+                    <span class="label">Seconds</span>
+                </div><br>
+                <div>
+                    <input type="number" min="0" value="0" id="minutes" onchange="minute(this.value)" oninput="minute(this.value)" >
+                    <span class="label">Minutes</span>
+                </div><br>
+                <div>
+                    <input type="number" min="0" value="0" id="hours" onchange="hour(this.value)"oninput="hour(this.value)" >
+                    <span class="label">Hours</span>
+                </div><br>
+                <div>
+                    <input type="number" min="0" value="0" id="days"onchange="day(this.value)" oninput="day(this.value)" >
+                    <span class="label">Days</span>
+                </div><br>
+                <div>
+                    <input type="number" min="0" value="0" id="weeks" onchange="week(this.value)"oninput="week(this.value)" >
+                    <span class="label">Weeks</span>
+                </div><br>
+                <div>
+                    <input type="number" min="0" value="0" id="years" onchange="year(this.value)" oninput="year(this.value)">
+                    <span class="label">Years</span>
+                </div>
+            </div>
+    </article>
+
+<!-- Temperature Section -->
+
+    <article id="temperature" style="display: none;">
+        <div class="temp">
+                <header>
+                    <h1 class="title">Temperature</h1>
+                </header><br>
+                <div class="main">
+                    <input type="number" value="0" id="celsius" onchange="celsius(this.value)" oninput="celsius(this.value)">
+                    <span class="label">Celsius</span>
+                </div><br>
+                <div>
+                    <input type="number" value="32" id="fahrenhait" onchange="fahrenhait(this.value)" oninput="fahrenhait(this.value)">
+                    <span class="label">Fahrenhait</span>
+                </div><br>
+                <div>
+                    <input type="number" value="273.15" id="kelvin" onchange="kelvin(this.value)" oninput="kelvin(this.value)">
+                    <span class="label">Kelvin</span>
+                </div>
+        </div>
+    </article>
+<script src="script.js"></script>
+</body>
+</html>
